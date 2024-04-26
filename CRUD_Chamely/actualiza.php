@@ -1,13 +1,13 @@
 <?php
 
 include_once 'conectar.php';
-$id = $_POST['id'];
+$id_vh = $_POST['id_vh'];
 
 if(isset($_POST['update'])){
 
-    $id = $_POST['id'];
+    $id_vh = $_POST['id_vh'];
 
-    $query = "UPDATE vehiculo SET matricula_vh='{$matricula}', año_salida_vh='{$año_salida_vh}', distintivo_vh='{$distintivo}', id_catg='{$categoria}', estado_vh='{$estado}', id_marca='{$marca}' WHERE id_vh='{$_POST['id']}'";
+    $query = "UPDATE vehiculo SET matricula_vh= '$_POST[matricula]', año_salida_vh='$_POST[año_salida]', distintivo_vh='$_POST[distintivo]', id_catg='$_POST[categoria]', estado_vh='$_POST[estado]', id_marca='$_POST[marca]' WHERE id_vh='$_POST[id_vh]'";
     mysqli_query($mysqli, $query);
     
 }

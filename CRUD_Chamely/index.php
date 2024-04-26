@@ -4,22 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de vehículo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        h1, h2, h3 {
+            color: #6a0dad;
+            text-align: center;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        form input[type="text"],
+        form input[type="date"],
+        form select,
+        form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        form button {
+            background-color: #6a0dad;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        form button:hover {
+            background-color: #4b078d;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        
+        table th {background-color: #6a0dad;
+            color: #fff;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        table tr:hover {
+            background-color: #ddd;
+        }
+        
+        table td a {
+            color: #6a0dad;
+            text-decoration: none;
+        }
+        
+        table td a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
 <h1>Bienvenido</h1>
+<br>
+<h2>Formulario de ingreso de vehiculos</h2>
 <form action="insertar.php" method="post">
     Matrícula:
     <br>
     <input type="text" name="matricula" placeholder="Matrícula">
     <br>
+    <br>
     Año de salida:
     <br>
     <input type="date" name="año_salida">
     <br>
+    <br>
     Distintivo:
     <br>
     <input type="text" name="distintivo" placeholder="Distintivo">
+    <br>
     <br>
     Categoría:
     <select name="categoria">
@@ -32,12 +114,16 @@
         
     </select>
     <br>
+    <br>
     Estado:
     <br>
+    
     <select name="estado">
-        <option value="Seleccione" selected>
+        <option value="Seleccione" selected>Seleccione estado
         <option value="Activo">Activo
-        <option value="Inactivo">Inactivo    
+        <option value="Inactivo">Inactivo   
+</select> 
+<br>
     <br>
     Marca:
     <select name="marca">
@@ -49,12 +135,13 @@
         <option value="5">Chevrolet</option>
     </select>
     <br>
+    <br>
     <button type="submit" name="submit">Guardar</button>
 </form>
 
 <h3>Editar vehículo</h3>
 <form action="update.php" method="POST">
-    <input type="text" name="id" placeholder="ID">
+    <input type="text" name="id_vh" placeholder="ID">
     <button type="submit" name="update">Editar</button>
 </form>
 
