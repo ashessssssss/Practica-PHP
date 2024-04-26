@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "chamely", "chamely");
+$mysqli = new mysqli("localhost", "root", "chamely", "practicaphp");
 
 if ($mysqli->connect_errno) {
 

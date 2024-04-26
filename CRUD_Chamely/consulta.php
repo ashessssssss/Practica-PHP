@@ -6,30 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-<h3>Noticia encontrada</h3>
+<h3>Vehiculo encontrado</h3>
 
 <table border="2">
  <tr>
      <th>ID</th>
-     <th>Titulo</th>
-     <th>Contenido</th>
-     <th>categoria</th>
-     <th>Fecha</th>
+     <th>Matricula</th>
+     <th>Año de salida</th>
+     <th>Distintivo</th>
+     <th>Id_categoria</th>
+     <th>Estado vehiculo</th>
+     <th>Id_marca</th>
  </tr>
 <?php 
 include_once 'conectar.php';
-$categoria = $_POST['id'];
+$id = $_POST['id'];
 
-     $query = "SELECT * FROM noticias where categoria='$categoria' ";
+     $query = "SELECT * FROM vehiculo where id_vh='$id' ";
      $data = mysqli_query($mysqli, $query);
      $total = mysqli_num_rows($data);
 
      if($total!=0){
          while($row=mysqli_fetch_assoc($data)){
              
-             echo "<tr> <td>" . $row['id'] . "</td> <td>" . $row['titulo'] .
-              "</td> <td>" . $row['texto'] . "</td> <td>" . $row['categoria'] . 
-              "</td><td>" . $row['fecha'] . "</td> </tr>";
+             echo "<tr> <td>" . $row['id_vh'] . "</td> <td>" . $row['matricula_vh'] .
+              "</td> <td>" . $row['año_salida_vh'] . "</td> <td>" . $row['distintivo_vh'] . 
+              "</td><td>" . $row['id_catg'] . "</td> </tr>". $row['estado_vh'] . "</td> </tr>". $row['id_marca'] . "</td> </tr>";
          }
      }
 
