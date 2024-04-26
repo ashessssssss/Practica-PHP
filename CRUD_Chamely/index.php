@@ -86,7 +86,7 @@
          <td>" . $row['id_catg'] . "</td> 
          <td>" . $row['estado_vh'] . "</td> 
          <td>" . $row['id_marca'] . "</td> 
-         <td> <a href='delete.php?rn=$row[id]'>Borrar</td> </tr>";
+         <td> <a href='delete.php?rn=$row[id_vh]'>Borrar</td> </tr>";
      }
  }
  ?>
